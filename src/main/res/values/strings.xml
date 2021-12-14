@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">NotSoIMDb</string>
+    <string name="release_date">Release Date:</string>
+    <string name="description">Description:</string>
+    <string name="genre">Genres:</string>
+    <string name="actors">Actors:</string>
+    <string name="directors">Directors:</string>
+    <string name="writers">Writers:</string>
+    <string name="runtime">Runtime:</string>
+    <string name="budget">Budget:</string>
+    <string name="gross">Gross:</string>
+    <string name="film_poster">Film Poster</string>
+    <string name="search">Search</string>
+    <string name="go">GO</string>
+    <string name="photo">Photo</string>
+    <string name="gender">Gender:</string>
+    <string name="bio">Bio:</string>
+    <string name="born">Born:</string>
+    <string name="died">Died:</string>
+    <string name="films">Films:</string>
+</resources>

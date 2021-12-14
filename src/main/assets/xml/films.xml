@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Films [
+    <!ELEMENT Films (Film+)>
+    <!ELEMENT Film (title, posterFileName, releaseDate, budget?, gross?, genre+, actor*, director+, writer+, description, runtime)>
+    <!ELEMENT title (#PCDATA)>
+    <!ELEMENT posterFileName (#PCDATA)>
+    <!ELEMENT releaseDate (#PCDATA)>
+    <!ELEMENT budget (#PCDATA)>
+    <!ELEMENT gross (#PCDATA)>
+    <!ELEMENT genre (#PCDATA)>
+    <!ELEMENT actor (#PCDATA)>
+    <!ELEMENT director (#PCDATA)>
+    <!ELEMENT writer (#PCDATA)>
+    <!ELEMENT description (#PCDATA)>
+    <!ELEMENT runtime (#PCDATA)>
+    ]>
+
+<Films>
+
+    <Film>
+        <title>Fantastic Beasts and Where to Find Them</title>
+        <posterFileName>f1.png</posterFileName>
+        <releaseDate>18.11.2016</releaseDate>
+        <budget>180000000</budget>
+        <gross>814044001</gross>
+        <genre>Adventure</genre>
+        <genre>Family</genre>
+        <genre>Fantasy</genre>
+        <actor>Eddie Redmayne</actor>
+        <actor>Alison Sudol</actor>
+        <actor>Dan Fogler</actor>
+        <actor>Katherine Waterston</actor>
+        <director>David Yates</director>
+        <writer>J.K. Rowling</writer>
+        <description>In mid-1920s New York, Newt Scamander, a British young activist wizard, arrives in the city, holding a mysterious leather suitcase that shelters diverse and magical creatures that exist among us. Amid an already fragile equilibrium of secrecy, and the increasing disasters ascribed to the dark wizard, Gellert Grindelwald, Newt's precious suitcase goes missing, and to make matters worse, several creatures manage to escape. Before long, this unforeseen complication catches Senior Auror Percival Graves' attention who targets Newt, against the backdrop of an invisible, devastating, and utterly unpredictable menace that still wreaks havoc on 5th Avenue. In the end, is there a hidden agenda behind Graves' intentions? Moreover, what will happen to the remaining fantastic beasts that are still on the loose?</description>
+        <runtime>132</runtime>
+    </Film>
+
+    <Film>
+        <title>The Theory of Everything</title>
+        <posterFileName>f2.jpg</posterFileName>
+        <releaseDate>26.11.2014</releaseDate>
+        <budget>15000000</budget>
+        <gross>123726688</gross>
+        <genre>Biography</genre>
+        <genre>Drama</genre>
+        <genre>Romance</genre>
+        <actor>Eddie Redmayne</actor>
+        <actor>Felicity Jones</actor>
+        <actor>Tom Prior</actor>
+        <director>James Marsh</director>
+        <writer>Anthony McCarten</writer>
+        <writer>Jane Hawking</writer>
+        <description>The Theory of Everything is the story of the most brilliant and celebrated physicist of our time, Stephen Hawking, and Jane Wilde, the arts student he fell in love with while studying at Cambridge in the 1960s. Little was expected from Hawking, a bright but shiftless student of cosmology, after he was given just two years to live following the diagnosis of a fatal illness (ALS) at 21 years of age. He became galvanized, however, by the love Jane Wilde, and went on to be called the "successor to Einstein," as well as a husband and father to their three children. Over the course of their marriage, however, as Stephen's body collapsed and his academic renown soared, fault lines were exposed that tested the resolve of their relationship and dramatically altered the course of both of their lives.</description>
+        <runtime>123</runtime>
+    </Film>
+
+    <Film>
+        <title>Fantastic Beasts: The Crimes of Grindelwald</title>
+        <posterFileName>f3.jpg</posterFileName>
+        <releaseDate>16.11.2018</releaseDate>
+        <budget>200000000</budget>
+        <gross>654855901</gross>
+        <genre>Adventure</genre>
+        <genre>Family</genre>
+        <genre>Fantasy</genre>
+        <actor>Eddie Redmayne</actor>
+        <actor>Alison Sudol</actor>
+        <actor>Dan Fogler</actor>
+        <actor>Katherine Waterston</actor>
+        <actor>Johnny Depp</actor>
+        <director>David Yates</director>
+        <writer>J.K. Rowling</writer>
+        <description>In an effort to thwart Grindelwald's plans of raising pure-blood wizards to rule over all non-magical beings, Albus Dumbledore enlists his former student Newt Scamander, who agrees to help, though he's unaware of the dangers that lie ahead. Lines are drawn as love and loyalty are tested, even among the truest friends and family, in an increasingly divided wizarding world.</description>
+        <runtime>134</runtime>
+    </Film>
+
+<!--
+    <Film>
+        <title></title>
+        <posterFileName></posterFileName>
+        <releaseDate></releaseDate>
+        <budget></budget>
+        <gross></gross>
+        <genre></genre>
+        <director></director>
+        <writer></writer>
+        <description></description>
+        <runtime></runtime>
+    </Film>
+-->
+
+</Films>

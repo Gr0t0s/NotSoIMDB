@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE CrewMembers [
+    <!ELEMENT CrewMembers (CrewMember+)>
+    <!ELEMENT CrewMember (name, photoFileName?, gender, birthDate, deathDate?, bio?)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT photoFileName (#PCDATA)>
+    <!ELEMENT gender (#PCDATA)>
+    <!ELEMENT birthDate (#PCDATA)>
+    <!ELEMENT deathDate (#PCDATA)>
+    <!ELEMENT bio (#PCDATA)>
+    ]>
+
+<CrewMembers>
+
+    <CrewMember>
+        <name>Eddie Redmayne</name>
+        <photoFileName>cm1.jpg</photoFileName>
+        <gender>Male</gender>
+        <birthDate>06.01.1982</birthDate>
+        <bio>British actor Eddie Redmayne won the Academy Award for Best Actor (for The Theory of Everything (2014)).
+Edward John David Redmayne was born and raised in London, England, the son of Patricia (Burke) and Richard Charles Tunstall Redmayne, a businessman. His great-grandfather was Sir Richard Augustine Studdert Redmayne, a noted civil and mining engineer. He has English, Irish, Scottish and Welsh ancestry. Redmayne is the only member of his family to follow a career in acting, and also modeled during his teen years. He was educated at Eton College before going on to Trinity College, Cambridge, where he studied History of Art. Encouraged by his parents, Redmayne took drama lessons from a young age. His first stage appearance was in the Sam Mendes production of "Oliver!", in London's West End. He played a workhouse boy. Acting continued through school and university, including performing with the National Youth Music Theatre.
+Redmayne's first professional stage performance came in 2002 at Shakespeare's Globe Theatre where he played Viola in "Twelfth Night". In 2004, he won the prestigious Evening Standard Outstanding Newcomer Award for his working in Edward Albee's play "The Goat". Further stage successes followed, and in 2009, he starred in John Logan's "Red" at the Donmar Warehouse in London. He won huge critical acclaim for his role, winning an Oliver Award for Best Actor in a Supporting Role. The play transferred to Broadway in 2010, and Redmayne went on to win a Tony Award for Best Performance by a Featured Actor in a Play.
+Alongside his stage career, Redmayne has worked steadily in television and film. Notable projects include Robert De Niro's The Good Shepherd (2006), Elizabeth: The Golden Age (2007), Tess of the D'Urbervilles (2008), The Pillars of the Earth (2010) and My Week with Marilyn (2011). He co-starred as Marius Pontmercy in the musical Les Misérables (2012). He played scientist Stephen Hawking in the biographical drama The Theory of Everything (2014), opposite Felicity Jones, as Stephen's wife Jane Hawking. For his performance, Redmayne won multiple awards, including the Academy Award for Best Actor. As such, he became the first man born in the 1980s to win an acting Oscar. He received further critical acclaim for his portrayal of Lili Elbe, one of the first known recipients of sex reassignment surgery, in The Danish Girl (2015). For his performance, he was nominated for multiple awards, including the Academy Award for Best Actor.
+In 2014, Redmayne married publicist Hannah Bagshawe.</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>Alison Sudol</name>
+        <photoFileName>cm2.jpg</photoFileName>
+        <gender>Female</gender>
+        <birthDate>23.12.1984</birthDate>
+        <bio>Alison Sudol is an actress, musician and author based in Los Angeles. Alongside a successful music career, Alison starred in the two-time Golden Globe-winning Amazon hit 'Transparent', USA network's 'DIG' from the creators of 'Homeland' and 'Heroes' and Rafael Palacio's show 'The Force'. Alison plays Queenie in the new Harry Potter spin-off 'Fantastic Beasts and Where to Find Them'.</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>David Yates</name>
+        <photoFileName>cm3.jpg</photoFileName>
+        <gender>Male</gender>
+        <birthDate>08.10.1963</birthDate>
+        <bio>David Yates was born on October 8, 1963 in St. Helens, Merseyside, England. He is a director and producer, known for Harry Potter and the Deathly Hallows: Part 2 (2011), Harry Potter and the Order of the Phoenix (2007) and The Legend of Tarzan (2016).</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>J.K. Rowling</name>
+        <photoFileName>cm4.jpg</photoFileName>
+        <gender>Female</gender>
+        <birthDate>31.07.1965</birthDate>
+        <bio>Joanne Rowling was born in Yate, near Bristol, a few miles south of a town called Dursley ("Harry Potter"'s Muggle-family). Her father Peter Rowling was an engineer for Rolls Royce in Bristol at this time. Her mother, Anne, was half-French and half-Scottish. They met on a train as it left King's Cross Station in London. Her sister Diana is about 2 years younger than Joanne. In 1971, Peter Rowling moved his family to the nearby village of Winterbourne (still in the Bristol vicinity). During the family's residence in Winterbourne, Jo and Di Rowling were friends with neighborhood children, Ian and Vikki Potter. In 1974, the Rowling family moved yet again, this time to Tutshill, near the Welsh border-town of Chepstow in the Forest of Dean and across the Severn River from the greater Bristol area. Rowling admits to having been a bit of a daydreamer as a child and began writing stories at the age of six. After leaving Exeter University, where she read French and Classics, she started work as a teacher but daydreamed about becoming a writer. One day, stuck on a delayed train for four hours between Manchester and London, she dreamed up a boy called "Harry Potter". That was in 1990. It took her six years to write the book. In the meantime, she went to teach in Portugal, married a Portuguese television journalist, had her daughter, Jessica, divorced her husband and returned to Britain when Jessica was just three months old. She went to live in Edinburgh to be near her sister, Di. Her sudden penury made her realize that it was "back-against-the-wall time" and she decided to finish her "Harry Potter" book. She sent the manuscript to two agents and one publisher, looking up likely prospects in the library. One of these agents that she picked at random based on the fact that she liked his name, Christopher Little, was immediately captivated by the manuscript and signed her on as his client within three days. During the 1995-1996 time-frame, while hoping to get the manuscript for "Harry Potter &amp; The Philosopher's Stone" published, Rowling worked as a French teacher in Edinburgh. Several publishers turned down the manuscript before Bloomsbury agreed to purchase it in 1996.</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>Dan Fogler</name>
+        <photoFileName>cm5.jpg</photoFileName>
+        <gender>Male</gender>
+        <birthDate>20.10.1976</birthDate>
+        <bio>Dan Fogler made his Broadway debut when he originated the role of William Barfée in The 25th Annual Putnam County Spelling Bee, for which he won the Theatre World Award for the original off-Broadway production and the Tony Award for Best Featured Actor in a Musical in 2005 for the original Broadway production.
+Fogler's first television appearance was in 2002 on FOX's 30 Seconds to Fame as a contestant impersonating Al Pacino. Other television credits include guest starring roles on AMC's The Walking Dead, ABC's The Goldbergs, NBC's Hannibal, CBS' The Good Wife and voice work for FOX's American Dad. Fogler also has had starring roles in ABC's Man Up! and Secrets &amp; Lies.
+In film, Fogler is most known for his role of Jacob Kolwalski in J.K. Rowling's Fantastic Beasts and Where to Find Them and Fantastic Beasts The Crimes of Grindelwald. Fogler also starred as Randy Daytona in 2007's Balls Of Fury for Focus Features and had roles in Good Luck Chuck, Fanboys, Take Me Home Tonight, Love Happens, Scenic Route, Europa Report and In Like Flynn.
+Fogler has also done a variety of voiceover acting in films such as; Horton Hears A Who! along with Steve Carell and Jim Carrey, Disney's Mars Needs Moms, Free Birds and 2008's Kung Fu Panda, with Jack Black and Jackie Chan.
+Some of Fogler's other projects include starring in the music video for the Type O Negative song "I Don't Wanna Be Me", in which he played a man recording himself on video as he cross-dresses as celebrities including Marilyn Monroe, Michael Jackson and Britney Spears.
+Fogler also wrote and directed the play Elephant in the Room, inspired by Ionesco's Rhinoceros, which was produced by the New York International Fringe Festival in 2007. Fogler has also written and directed Hysterical Psycho (2009) which premiered at the 2009 Tribeca Film Festival, featuring actors from his theater company Stage 13 where Dan serves as one of the company's Artistic Directors, and Don Peyote (2014) which also saw Fogler in the lead role as Warren Allman, with supporting roles from Josh Duhamel, Anne Hathaway, Topher Grace. Hysterical Psycho was Fogler's first graphic novel. In 2010, Archaia Entertainment published the horror anthology Moon Lake. This collection of stories chronicles the past, present, and future of the most haunted town on Earth: Moon Lake. Fogler is also hard at work on another graphic novel, Brooklyn Gladiator.</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>Katherine Waterston</name>
+        <photoFileName>cm6.jpg</photoFileName>
+        <gender>Female</gender>
+        <birthDate>03.03.1980</birthDate>
+        <bio>Katherine Waterston is an American actress. She is best known for Inherent Vice (2014), Fantastic Beasts and Where to Find Them (2016), and Alien: Covenant (2017).
+Waterston made her feature film debut in Michael Clayton (2007). She also had supporting roles in films including Robot &amp; Frank (2012), Being Flynn (2012), The Disappearance of Eleanor Rigby: Her (2013), and Steve Jobs (2015).
+She is the daughter of Sam Waterston, an Oscar-nominated actor.</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>Felicity Jones</name>
+        <photoFileName>cm7.jpg</photoFileName>
+        <gender>Female</gender>
+        <birthDate>17.10.1983</birthDate>
+        <bio>Felicity Rose Hadley Jones is an English actress and producer. Jones started her professional acting career as a child, appearing at age 12 in The Treasure Seekers (1996). She went on to play Ethel Hallow for one series in the television show The Worst Witch and its sequel Weirdsister College. After Kings Norton Girls School, Jones attended King Edward VI Handsworth School, to complete A Levels and went on to take a gap year (during which she appeared in the BBC series Servants (2003)). She took time off from acting to attend school during her formative years, and has worked steadily since she graduated with a 2:1 from Wadham College, Oxford in 2006, where she read English. While studying English, she appeared in student plays, including Attis in which she played the title role, and, in 2005, Shakespeare's "Comedy of Errors" for the OUDS summer tour to Japan, starring alongside Harry Lloyd.
+On radio, she is known for playing the long-running role of Emma Grundy in The Archers. In 2008, she appeared in the Donmar Warehouse production of The Chalk Garden. Since 2006, Jones has appeared in numerous films, including Northanger Abbey (2007), Brideshead Revisited (2008), Chéri (2009), and The Tempest (2010). She stars in Star Wars spin-off Rogue One: A Star Wars Story (2016) as Jyn Erso. Her performance in the 2011 film Like Crazy (2011) was met with critical acclaim garnering her numerous awards, including a special jury prize at the 2011 Sundance Film Festival. In 2014, her performance as Jane Hawking in The Theory of Everything (2014) was also met with critical acclaim, garnering her nominations for the Golden Globe, SAG, BAFTA, and Academy Award for Best Actress.
+In 2019, Jones founded her own production company, Piecrust Productions with her brother, Alex Jones.</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>Tom Prior</name>
+        <photoFileName>cm8.jpg</photoFileName>
+        <gender>Male</gender>
+        <birthDate>02.12.1990</birthDate>
+        <bio>Actor, writer and producer, Tom Prior, is known for his work on both the screen and stage.
+Tom trained at the Royal Academy of Dramatic Art (RADA) graduating in 2012. His acting work includes; The Theory of Everything (2014 / Working Title) playing Eddie Redmayne's son Robert Hawking. Kingsman: The Secret Service (2014 / Twentieth Century Fox, Marv Films) and Endeavour (2014) series for ITV.
+Tom co-wrote Firebird (2020), a touching love story, based on true events, set in the Soviet Air Force, during the Cold War - in which he plays the lead role. He also produced the film. He recently completed his latest acting role playing Private Love, in Just Noise (2020), telling the true story of the British Government's cover up of military intervention during the struggle for independence in Malta.
+Tom has starred in London's West End productions of Tory Boyz (by James Graham), Prince of Denmark, and Romeo &amp; Juliet. Tom was selected to train with the National Youth Theatre REP Company, he was one of 15 actors selected from around the UK; working in collaboration with the National Theatre, BBC, Royal Shakespeare Company. He wrote his first short film Breaking the Circle in 2014.
+Tom considers himself a versatile filmmaker - and enjoys his time in front of and behind the camera. He now develops films with a clear mission to create films which uplift, inspire and heal audiences.</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>James Marsh</name>
+        <photoFileName>cm9.jpg</photoFileName>
+        <gender>Male</gender>
+        <birthDate>30.04.1963</birthDate>
+        <bio>James Marsh was born on April 30, 1963 in Truro, Cornwall, England. He is a director and producer, known for The Theory of Everything (2014), The King (2005) and Shadow Dancer (2012).</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>Anthony McCarten</name>
+        <photoFileName>cm10.jpg</photoFileName>
+        <gender>Male</gender>
+        <birthDate>28.04.1961</birthDate>
+        <bio>Anthony McCarten was born on April 28, 1961 in New Plymouth, New Zealand. He is a writer and producer, known for The Theory of Everything (2014), The Two Popes (2019) and Darkest Hour (2017). He is married to Eva Maiwald. They have three children.</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>Jane Hawking</name>
+        <photoFileName>cm11.jpg</photoFileName>
+        <gender>Female</gender>
+        <birthDate>29.03.1944</birthDate>
+        <bio>Jane Hawking was born on March 29, 1944 in St Albans, Hertfordshire, England as Jane Beryl Wilde. She is a writer, known for The Theory of Everything (2014), Hawking (2013) and Hawking: Can You Hear Me? (2021). She has been married to Jonathan Hellyer Jones since 1997. She was previously married to Stephen Hawking.</bio>
+    </CrewMember>
+
+    <CrewMember>
+        <name>Johnny Depp</name>
+        <photoFileName>cm12.jpg</photoFileName>
+        <gender>Male</gender>
+        <birthDate>09.06.1963</birthDate>
+        <bio>Johnny Depp is perhaps one of the most versatile actors of his day and age in Hollywood.
+He was born John Christopher Depp II in Owensboro, Kentucky, on June 9, 1963, to Betty Sue (Wells), who worked as a waitress, and John Christopher Depp, a civil engineer.
+Depp was raised in Florida. He dropped out of school when he was 15, and fronted a series of music-garage bands, including one named 'The Kids'. When he married Lori Anne Allison (Lori A. Depp) he took a job as a ballpoint-pen salesman to support himself and his wife. A visit to Los Angeles, California, with his wife, however, happened to be a blessing in disguise, when he met up with actor Nicolas Cage, who advised him to turn to acting, which culminated in Depp's film debut in the low-budget horror film, A Nightmare on Elm Street (1984), where he played a teenager who falls prey to dream-stalking demon Freddy Krueger.
+In 1987 he shot to stardom when he replaced Jeff Yagher in the role of undercover cop Tommy Hanson in the popular TV series 21 Jump Street (1987).
+In 1990, after numerous roles in teen-oriented films, his first of a handful of great collaborations with director Tim Burton came about when Depp played the title role in Edward Scissorhands (1990). Following the film's success, Depp carved a niche for himself as a serious, somewhat dark, idiosyncratic performer, consistently selecting roles that surprised critics and audiences alike. He continued to gain critical acclaim and increasing popularity by appearing in many features before re-joining with Burton in the lead role of Ed Wood (1994). In 1997 he played an undercover FBI agent in the fact-based film Donnie Brasco (1997), opposite Al Pacino; in 1998 he appeared in Fear and Loathing in Las Vegas (1998), directed by Terry Gilliam; and then, in 1999, he appeared in the sci-fi/horror film The Astronaut's Wife (1999). The same year he teamed up again with Burton in Sleepy Hollow (1999), brilliantly portraying Ichabod Crane.
+Depp has played many characters in his career, including another fact-based one, Insp. Fred Abberline in From Hell (2001). He stole the show from screen greats such as Antonio Banderas in the finale to Robert Rodriguez's "mariachi" trilogy, Once Upon a Time in Mexico (2003). In that same year he starred in the marvelous family blockbuster Pirates of the Caribbean: The Curse of the Black Pearl (2003), playing a character that only the likes of Depp could pull off: the charming, conniving and roguish Capt. Jack Sparrow. The film's enormous success has opened several doors for his career and included an Oscar nomination. He appeared as the central character in the Stephen King-based movie, Secret Window (2004); as the kind-hearted novelist James Barrie in the factually-based Finding Neverland (2004), where he co-starred with Kate Winslet; and Rochester in the British film, The Libertine (2004). Depp collaborated again with Burton in a screen adaptation of Roald Dahl's novel, Charlie and the Chocolate Factory (2005), and later in Alice in Wonderland (2010) and Dark Shadows (2012).
+Off-screen, Depp has dated several female celebrities, and has been engaged to Sherilyn Fenn, Jennifer Grey, Winona Ryder and Kate Moss. He was married to Lori Anne Allison in 1983, but divorced her in 1985. Depp has two children with French singer/actress Vanessa Paradis: Lily-Rose Melody, born in 1999 and Jack, born in 2002. He married actress/producer Amber Heard in 2015.</bio>
+    </CrewMember>
+
+    <!--
+    <CrewMember>
+        <name></name>
+        <photoFileName></photoFileName>
+        <gender></gender>
+        <birthDate></birthDate>
+        <bio></bio>
+    </CrewMember>
+    -->
+</CrewMembers>
