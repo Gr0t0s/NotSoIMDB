@@ -33,6 +33,7 @@ public class FragmentCrewMember extends Fragment implements View.OnClickListener
 	private TextView tvName;
 	private ImageView ivPhoto;
 	private TextView tvGender;
+	private LinearLayout llBirthDate;
 	private TextView tvBirthDate;
 	private LinearLayout llDeathDate;
 	private TextView tvDeathDate;
@@ -55,6 +56,7 @@ public class FragmentCrewMember extends Fragment implements View.OnClickListener
 		tvName = view.findViewById(R.id.tvName);
 		ivPhoto = view.findViewById(R.id.ivPhoto);
 		tvGender = view.findViewById(R.id.tvGender);
+		llBirthDate = view.findViewById(R.id.llBirthDate);
 		tvBirthDate = view.findViewById(R.id.tvBirthDate);
 		llDeathDate = view.findViewById(R.id.llDeathDate);
 		tvDeathDate = view.findViewById(R.id.tvDeathDate);
@@ -67,6 +69,11 @@ public class FragmentCrewMember extends Fragment implements View.OnClickListener
 		ivPhoto.setImageDrawable(crewMember.getPhoto());
 		tvGender.setText(crewMember.getGender().toString());
 		tvBirthDate.setText(sdf.format(crewMember.getBirthDate()));
+		if (crewMember.getBirthDate() != null)
+		{
+			llBirthDate.setVisibility(View.VISIBLE);
+			tvBirthDate.setText(sdf.format(crewMember.getBirthDate()));
+		}
 		if (crewMember.getDeathDate() != null)
 		{
 			llDeathDate.setVisibility(View.VISIBLE);

@@ -75,6 +75,160 @@
         <runtime>134</runtime>
     </Film>
 
+    <Film>
+        <title>Pirates of the Caribbean: The Curse of the Black Pearl</title>
+        <posterFileName>f4.jpg</posterFileName>
+        <releaseDate>09.07.2003</releaseDate>
+        <budget>140000000</budget>
+        <gross>654264015</gross>
+        <genre>Action</genre>
+        <genre>Adventure</genre>
+        <genre>Fantasy</genre>
+        <actor>Johnny Depp</actor>
+        <actor>Geoffrey Rush</actor>
+        <actor>Keira Knightley</actor>
+        <actor>Orlando Bloom</actor>
+        <director>Gore Verbinski</director>
+        <writer>Ted Elliott</writer>
+        <writer>Terry Rossio</writer>
+        <writer>Stuart Beattie</writer>
+        <description>This swash-buckling tale follows the quest of Captain Jack Sparrow, a savvy pirate, and Will Turner, a resourceful blacksmith, as they search for Elizabeth Swann. Elizabeth, the daughter of the governor and the love of Will's life, has been kidnapped by the feared Captain Barbossa. Little do they know, but the fierce and clever Barbossa has been cursed. He, along with his large crew, are under an ancient curse, doomed for eternity to neither live, nor die. That is, unless a blood sacrifice is made.</description>
+        <runtime>143</runtime>
+    </Film>
+
+    <Film>
+        <title>Pirates of the Caribbean: Dead Man's Chest</title>
+        <posterFileName>f5.jpg</posterFileName>
+        <releaseDate>07.07.2006</releaseDate>
+        <budget>225000000</budget>
+        <gross>1066179747</gross>
+        <genre>Action</genre>
+        <genre>Adventure</genre>
+        <genre>Fantasy</genre>
+        <actor>Johnny Depp</actor>
+        <actor>Geoffrey Rush</actor>
+        <actor>Keira Knightley</actor>
+        <actor>Orlando Bloom</actor>
+        <actor>Bill Nighy</actor>
+        <director>Gore Verbinski</director>
+        <writer>Ted Elliott</writer>
+        <writer>Terry Rossio</writer>
+        <writer>Stuart Beattie</writer>
+        <description>Once again we're plunged into the world of sword fights and "savvy" pirates. Captain Jack Sparrow is reminded he owes a debt to Davy Jones, who captains the flying Dutchman, a ghostly ship, with a crew from hell. Facing the "locker" Jack must find the heart of Davy Jones but to save himself he must get the help of quick-witted Will Turner and Elizabeth Swan. If that's not complicated enough, Will and Elizabeth are sentenced to hang, unless Will can get Lord Cutler Beckett Jack's compass. Will is forced to join another crazy adventure with Jack.</description>
+        <runtime>151</runtime>
+    </Film>
+
+    <Film>
+        <title>Pirates of the Caribbean: At World's End</title>
+        <posterFileName>f6.jpg</posterFileName>
+        <releaseDate>25.05.2007</releaseDate>
+        <budget>300000000</budget>
+        <gross>960996492</gross>
+        <genre>Action</genre>
+        <genre>Adventure</genre>
+        <genre>Fantasy</genre>
+        <actor>Johnny Depp</actor>
+        <actor>Geoffrey Rush</actor>
+        <actor>Keira Knightley</actor>
+        <actor>Orlando Bloom</actor>
+        <director>Gore Verbinski</director>
+        <writer>Ted Elliott</writer>
+        <writer>Terry Rossio</writer>
+        <writer>Stuart Beattie</writer>
+        <description>After Elizabeth, Will, and Captain Barbossa rescue Captain Jack Sparrow from the land of the dead, they must face their foes, Davy Jones and Lord Cutler Beckett. Beckett, now with control of Jones' heart, forms a dark alliance with him in order to rule the seas and wipe out the last of the Pirates. Now, Jack, Barbossa, Will, Elizabeth, Tia Dalma, and crew must call the Pirate Lords from the four corners of the globe, including the infamous Sao Feng, to gathering. The Pirate Lords want to release the goddess Calypso, Davy Jones's damned lover, from the trap they sent her to out of fear, in which the Pirate Lords must combine the 9 pieces that bound her by ritual to undo it and release her in hopes that she will help them fight. With this, all pirates will stand together and will make their final stand for freedom against Beckett, Jones, Norrington, the Flying Dutchman, and the entire East India Trading Company. </description>
+        <runtime>169</runtime>
+    </Film>
+
+    <Film>
+        <title>Pirates of the Caribbean: Dead Men Tell No Tales</title>
+        <posterFileName>f7.jpg</posterFileName>
+        <releaseDate>26.05.2017</releaseDate>
+        <budget>230000000</budget>
+        <gross>794881442</gross>
+        <genre>Action</genre>
+        <genre>Adventure</genre>
+        <genre>Fantasy</genre>
+        <actor>Johnny Depp</actor>
+        <actor>Geoffrey Rush</actor>
+        <actor>Keira Knightley</actor>
+        <actor>Orlando Bloom</actor>
+        <director>Joachim Rønning</director>
+        <director>Espen Sandberg</director>
+        <writer>Jeff Nathanson</writer>
+        <writer>Ted Elliott</writer>
+        <writer>Terry Rossio</writer>
+        <description>Captain Jack Sparrow (Johnny Depp) finds the winds of ill-fortune blowing even more strongly when deadly ghost pirates led by his old nemesis, the terrifying Captain Salazar (Javier Bardem), escape from the Devil's Triangle, determined to kill every pirate at sea...including him. Captain Jack's only hope of survival lies in seeking out the legendary Trident of Poseidon, a powerful artifact that bestows upon its possessor total control over the seas.</description>
+        <runtime>129</runtime>
+    </Film>
+
+    <Film>
+        <title>The Lord of the Rings: The Fellowship of the Ring</title>
+        <posterFileName>f8.jpg</posterFileName>
+        <releaseDate>19.12.2001</releaseDate>
+        <budget>93000000</budget>
+        <gross>897690072</gross>
+        <genre>Action</genre>
+        <genre>Adventure</genre>
+        <genre>Drama</genre>
+        <genre>Fantasy</genre>
+        <actor>Elijah Wood</actor>
+        <actor>Viggo Mortensen</actor>
+        <actor>Ian McKellen</actor>
+        <actor>Orlando Bloom</actor>
+        <actor>Alan Howard</actor>
+        <director>Peter Jackson</director>
+        <writer>J.R.R. Tolkien</writer>
+        <writer>Fran Walsh</writer>
+        <writer>Philippa Boyens</writer>
+        <description>An ancient Ring thought lost for centuries has been found, and through a strange twist of fate has been given to a small Hobbit named Frodo. When Gandalf discovers the Ring is in fact the One Ring of the Dark Lord Sauron, Frodo must make an epic quest to the Cracks of Doom in order to destroy it. However, he does not go alone. He is joined by Gandalf, Legolas the elf, Gimli the Dwarf, Aragorn, Boromir, and his three Hobbit friends Merry, Pippin, and Samwise. Through mountains, snow, darkness, forests, rivers and plains, facing evil and danger at every corner the Fellowship of the Ring must go. Their quest to destroy the One Ring is the only hope for the end of the Dark Lords reign.</description>
+        <runtime>172</runtime>
+    </Film>
+
+    <Film>
+        <title>The Lord of the Rings: The Two Towers</title>
+        <posterFileName>f9.jpg</posterFileName>
+        <releaseDate>18.12.2002</releaseDate>
+        <budget>94000000</budget>
+        <gross>947495095</gross>
+        <genre>Action</genre>
+        <genre>Adventure</genre>
+        <genre>Drama</genre>
+        <genre>Fantasy</genre>
+        <actor>Elijah Wood</actor>
+        <actor>Viggo Mortensen</actor>
+        <actor>Ian McKellen</actor>
+        <actor>Orlando Bloom</actor>
+        <director>Peter Jackson</director>
+        <writer>J.R.R. Tolkien</writer>
+        <writer>Fran Walsh</writer>
+        <writer>Philippa Boyens</writer>
+        <description>The continuing quest of Frodo and the Fellowship to destroy the One Ring. Frodo and Sam discover they are being followed by the mysterious Gollum. Aragorn, the Elf archer Legolas, and Gimli the Dwarf encounter the besieged Rohan kingdom, whose once great King Theoden has fallen under Saruman's deadly spell.</description>
+        <runtime>179</runtime>
+    </Film>
+
+    <Film>
+        <title>The Lord of the Rings: The Return of the King</title>
+        <posterFileName>f10.jpg</posterFileName>
+        <releaseDate>17.12.2003</releaseDate>
+        <budget>94000000</budget>
+        <gross>1146030912</gross>
+        <genre>Action</genre>
+        <genre>Adventure</genre>
+        <genre>Drama</genre>
+        <genre>Fantasy</genre>
+        <actor>Elijah Wood</actor>
+        <actor>Viggo Mortensen</actor>
+        <actor>Ian McKellen</actor>
+        <actor>Orlando Bloom</actor>
+        <actor>Alan Howard</actor>
+        <director>Peter Jackson</director>
+        <writer>J.R.R. Tolkien</writer>
+        <writer>Fran Walsh</writer>
+        <writer>Philippa Boyens</writer>
+        <description>The final confrontation between the forces of good and evil fighting for control of the future of Middle-earth. Frodo and Sam reach Mordor in their quest to destroy the One Ring, while Aragorn leads the forces of good against Sauron's evil army at the stone city of Minas Tirith. </description>
+        <runtime>201</runtime>
+    </Film>
+
 <!--
     <Film>
         <title></title>
@@ -83,6 +237,7 @@
         <budget></budget>
         <gross></gross>
         <genre></genre>
+        <actor></actor>
         <director></director>
         <writer></writer>
         <description></description>

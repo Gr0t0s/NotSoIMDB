@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
 	FragmentMain fragmentMain;
 	private final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy", Locale.US);
 	private final String DB_LOG_TAG = "SQLiteDB";
+	private final int DB_VERSION = 6;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity
 			{
 				db.execSQL("create table Genders (_id integer primary key autoincrement, gender varchar(16) not null);");
 				db.execSQL("create table Genres (_id integer primary key autoincrement, genre varchar(16) not null);");
-				db.execSQL("create table CrewMembers (_id integer primary key autoincrement, name varchar(128) not null, photoFileName varchar(64), genderId integer not null, birthDate integer not null, deathDate integer, bio text not null, foreign key (genderId) references Genders(_id));");
+				db.execSQL("create table CrewMembers (_id integer primary key autoincrement, name varchar(128) not null, photoFileName varchar(64), genderId integer not null, birthDate integer, deathDate integer, bio text not null, foreign key (genderId) references Genders(_id));");
 				db.execSQL("create table Films (_id integer primary key autoincrement, title varchar(128) not null, posterFileName varchar(64) not null, releaseDate integer not null, budget integer, gross integer, description text not null, runtime integer not null);");
 				db.execSQL("create table GenreLists (filmId integer, genreId integer, primary key (filmId, genreId), foreign key (filmId) references Films(_id), foreign key (genreId) references Genres(_id));");
 				db.execSQL("create table DirectorLists (filmId integer, crewMemberId integer, primary key (filmId, crewMemberId), foreign key (filmId) references Films(_id), foreign key (crewMemberId) references CrewMembers(_id));");
@@ -259,10 +260,15 @@ public class MainActivity extends AppCompatActivity
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
 		{
-			if(newVersion==2 && oldVersion==1)
-			{
-				//Оновлення таблиць в разі застарілої версії бази
-			}
+			db.execSQL("drop table Genders;");
+			db.execSQL("drop table Genres;");
+			db.execSQL("drop table CrewMembers;");
+			db.execSQL("drop table Films;");
+			db.execSQL("drop table GenreLists;");
+			db.execSQL("drop table ActorLists;");
+			db.execSQL("drop table DirectorLists;");
+			db.execSQL("drop table WriterLists;");
+			onCreate(db);
 		}
 	}
 	
@@ -282,9 +288,6 @@ public class MainActivity extends AppCompatActivity
 		protected Void doInBackground(Void... voids)
 		{
 			films = queryFilms("select distinct _id, title, posterFileName, releaseDate, budget, gross, description, runtime from Films order by releaseDate desc;", null);
-			//Deleting DB for testing purposes
-			//TODO: Remove after testing
-			//deleteDatabase("NotSoIMDb");
 			return null;
 		}
 		
@@ -314,9 +317,6 @@ public class MainActivity extends AppCompatActivity
 		{
 			String crewMemberId = String.valueOf(fragmentCrewMember.getCrewMember().getId());
 			films = queryFilms("select distinct Films._id, title, posterFileName, releaseDate, budget, gross, description, runtime from Films join ActorLists on Films._id = ActorLists.filmId join DirectorLists on Films._id = DirectorLists.filmId join WriterLists on Films._id = WriterLists.filmId where ActorLists.crewMemberId = ? or DirectorLists.crewMemberId = ? or WriterLists.crewMemberId = ? order by releaseDate desc;", new String[]{crewMemberId, crewMemberId, crewMemberId});
-			//Deleting DB for testing purposes
-			//TODO: Remove after testing
-			//deleteDatabase("NotSoIMDb");
 			return null;
 		}
 		
@@ -345,9 +345,6 @@ public class MainActivity extends AppCompatActivity
 		protected Void doInBackground(Void... voids)
 		{
 			films = queryFilms("select distinct _id, title, posterFileName, releaseDate, budget, gross, description, runtime from Films where title like '%" + fragmentMain.getQueryString() + "%' order by releaseDate desc;", null);
-			//Deleting DB for testing purposes
-			//TODO: Remove after testing
-			//deleteDatabase("NotSoIMDb");
 			return null;
 		}
 		
@@ -363,18 +360,17 @@ public class MainActivity extends AppCompatActivity
 	@RequiresApi(api = Build.VERSION_CODES.O)
 	public ArrayList<Film> queryFilms(String query, String[] args)
 	{
-		SQLiteConnector connector = new SQLiteConnector(MainActivity.this, "NotSoIMDb", 1); //контекст поточного Актівіті, назва бази, версія
+		SQLiteConnector connector = new SQLiteConnector(MainActivity.this, "NotSoIMDb", DB_VERSION); //контекст поточного Актівіті, назва бази, версія
 		Cursor result, result1;
 		ArrayList<Film> films = new ArrayList<>();
 		try
 		{
-			SQLiteDatabase db = connector.getReadableDatabase();
+			db = connector.getReadableDatabase();
 			ArrayList<Genre> genres = new ArrayList<>();
 			ArrayList<CrewMember> actors = new ArrayList<>();
 			ArrayList<CrewMember> directors = new ArrayList<>();
 			ArrayList<CrewMember> writers = new ArrayList<>();
 			result = db.rawQuery(query, args);
-			Log.d("TEST", query);
 			while (result.moveToNext())
 			{
 				//Спочатку беремо індекси полів
@@ -388,7 +384,7 @@ public class MainActivity extends AppCompatActivity
 				int runtimeIndex = result.getColumnIndexOrThrow("runtime");
 				//Витягуємо дані з полів за індексом
 				//Getting the genres
-				result1 = db.rawQuery("select genre from Films join GenreLists on Films._id = GenreLists.filmId join Genres on GenreLists.genreId = Genres._id where Films._id = " + result.getLong(idIndex) + ";", null);
+				result1 = db.rawQuery("select genre from Films join GenreLists on Films._id = GenreLists.filmId join Genres on GenreLists.genreId = Genres._id where Films._id = " + result.getLong(idIndex) + " order by genre;", null);
 				while (result1.moveToNext())
 				{
 					int genreIndex = result1.getColumnIndexOrThrow("genre");
@@ -396,7 +392,7 @@ public class MainActivity extends AppCompatActivity
 				}
 				result1.close();
 				//Getting the actors
-				result1 = db.rawQuery("select CrewMembers._id, name, photoFileName, gender, birthDate, deathDate, bio from Films join ActorLists on Films._id = ActorLists.filmId join CrewMembers on ActorLists.crewMemberId = CrewMembers._id join Genders on CrewMembers.genderId = Genders._id where Films._id = " + result.getLong(idIndex) + ";", null);
+				result1 = db.rawQuery("select CrewMembers._id, name, photoFileName, gender, birthDate, deathDate, bio from Films join ActorLists on Films._id = ActorLists.filmId join CrewMembers on ActorLists.crewMemberId = CrewMembers._id join Genders on CrewMembers.genderId = Genders._id where Films._id = " + result.getLong(idIndex) + " order by name;", null);
 				while (result1.moveToNext())
 				{
 					int crewMemberIdIndex = result.getColumnIndexOrThrow("_id");
@@ -418,7 +414,7 @@ public class MainActivity extends AppCompatActivity
 				}
 				result1.close();
 				//Getting the directors
-				result1 = db.rawQuery("select CrewMembers._id, name, photoFileName, gender, birthDate, deathDate, bio from Films join DirectorLists on Films._id = DirectorLists.filmId join CrewMembers on DirectorLists.crewMemberId = CrewMembers._id join Genders on CrewMembers.genderId = Genders._id where Films._id = " + result.getLong(idIndex) + ";", null);
+				result1 = db.rawQuery("select CrewMembers._id, name, photoFileName, gender, birthDate, deathDate, bio from Films join DirectorLists on Films._id = DirectorLists.filmId join CrewMembers on DirectorLists.crewMemberId = CrewMembers._id join Genders on CrewMembers.genderId = Genders._id where Films._id = " + result.getLong(idIndex) + " order by name;", null);
 				while (result1.moveToNext())
 				{
 					int crewMemberIdIndex = result.getColumnIndexOrThrow("_id");
@@ -440,7 +436,7 @@ public class MainActivity extends AppCompatActivity
 				}
 				result1.close();
 				//Getting the writers
-				result1 = db.rawQuery("select CrewMembers._id, name, photoFileName, gender, birthDate, deathDate, bio from Films join WriterLists on Films._id = WriterLists.filmId join CrewMembers on WriterLists.crewMemberId = CrewMembers._id join Genders on CrewMembers.genderId = Genders._id where Films._id = " + result.getLong(idIndex) + ";", null);
+				result1 = db.rawQuery("select CrewMembers._id, name, photoFileName, gender, birthDate, deathDate, bio from Films join WriterLists on Films._id = WriterLists.filmId join CrewMembers on WriterLists.crewMemberId = CrewMembers._id join Genders on CrewMembers.genderId = Genders._id where Films._id = " + result.getLong(idIndex) + " order by name;", null);
 				while (result1.moveToNext())
 				{
 					int crewMemberIdIndex = result.getColumnIndexOrThrow("_id");
@@ -487,8 +483,7 @@ public class MainActivity extends AppCompatActivity
 			Log.d(DB_LOG_TAG, "Error reading DB", e);
 			films = null;
 		}
-		if (db != null)
-			db.close();
+		db.close();
 		return films;
 	}
 	
