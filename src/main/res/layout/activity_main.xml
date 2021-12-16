@@ -1,8 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".controller.MainActivity"
-    android:id="@+id/frameMain"
-    android:layout_margin="3dp"/>
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".controller.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/background_titlebar"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="67dp"
+            android:layout_gravity="start"
+            android:layout_weight="5"
+            android:src="@drawable/logo_zntu_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.01"
+            android:text="NotSoIMDb"
+            android:textColor="@color/text_accent"
+            android:textStyle="bold"
+            android:textAlignment="gravity"
+            android:textSize="40sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="67dp"
+            android:layout_gravity="end"
+            android:layout_weight="5"
+            android:src="@drawable/logo_zntu_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="3dp">
+
+        <FrameLayout
+            android:id="@+id/frameMain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

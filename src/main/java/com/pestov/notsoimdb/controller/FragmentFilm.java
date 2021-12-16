@@ -1,6 +1,6 @@
 package com.pestov.notsoimdb.controller;
 
-import android.graphics.Color;
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.TypedValue;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -27,13 +28,15 @@ import java.text.SimpleDateFormat;
 import java.util.Currency;
 import java.util.Locale;
 
-public class FragmentFilm extends Fragment implements View.OnClickListener
+@RequiresApi(api = Build.VERSION_CODES.M)
+public class FragmentFilm extends Fragment implements View.OnClickListener, View.OnScrollChangeListener
 {
 	private Film film;
 	private final SimpleDateFormat sdf = new SimpleDateFormat("MMMM d, yyyy", Locale.US);
 	private final int CREW_MEMBER_TV_ID_RES = 1;
 	private boolean tvDescriptionExpanded = false;
 	
+	private ScrollView svFilm;
 	private TextView tvTitle;
 	private ImageView ivPoster;
 	private TextView tvReleaseDate;
@@ -46,6 +49,7 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 	private TextView tvRuntime;
 	private TextView tvBudget;
 	private TextView tvGross;
+	private MainActivity mainActivity;
 	
 	public FragmentFilm()
 	{
@@ -59,6 +63,9 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 	{
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.fragment_film, container, false);
+		//Hide the status and navigation bars
+		view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE);
+		svFilm = view.findViewById(R.id.svFilm);
 		tvTitle = view.findViewById(R.id.tvTitle);
 		ivPoster = view.findViewById(R.id.ivPoster);
 		tvReleaseDate = view.findViewById(R.id.tvReleaseDate);
@@ -72,6 +79,7 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 		tvBudget = view.findViewById(R.id.tvBudget);
 		tvGross = view.findViewById(R.id.tvGross);
 		
+		svFilm.setOnScrollChangeListener(this);
 		tvTitle.setText(film.getTitle());
 		ivPoster.setImageDrawable(film.getPoster());
 		tvReleaseDate.setText(sdf.format(film.getReleaseDate()));
@@ -81,6 +89,7 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 			TextView tv = new TextView(getContext());
 			tv.setText(genre.toString());
 			tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+			tv.setTextColor(getResources().getColor(R.color.text));
 			llGenres.addView(tv);
 		}
 		tvDescription.setText(film.getDescription());
@@ -92,7 +101,7 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 			tv.setId(CREW_MEMBER_TV_ID_RES);
 			tv.setText(crewMember.getName());
 			tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-			tv.setTextColor(getResources().getColor(R.color.purple_500));
+			tv.setTextColor(getResources().getColor(R.color.text_accent));
 			tv.setTag(crewMember);
 			tv.setOnClickListener(this);
 			llDirectors.addView(tv);
@@ -104,7 +113,7 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 			tv.setId(CREW_MEMBER_TV_ID_RES);
 			tv.setText(crewMember.getName());
 			tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-			tv.setTextColor(getResources().getColor(R.color.purple_500));
+			tv.setTextColor(getResources().getColor(R.color.text_accent));
 			tv.setTag(crewMember);
 			tv.setOnClickListener(this);
 			llWriters.addView(tv);
@@ -116,7 +125,7 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 			tv.setId(CREW_MEMBER_TV_ID_RES);
 			tv.setText(crewMember.getName());
 			tv.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-			tv.setTextColor(getResources().getColor(R.color.purple_500));
+			tv.setTextColor(getResources().getColor(R.color.text_accent));
 			tv.setTag(crewMember);
 			tv.setOnClickListener(this);
 			llActors.addView(tv);
@@ -132,16 +141,17 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 		currencyFormatter.setMaximumFractionDigits(0);
 		tvBudget.setText(currencyFormatter.format(film.getBudget()));
 		tvGross.setText(currencyFormatter.format(film.getGross()));
+		mainActivity = (MainActivity) requireActivity();
 		return view;
 	}
 	
 	
-	public FragmentFilm setFilm(Film film)
+	public void setFilm(Film film)
 	{
 		this.film = film;
-		return this;
 	}
 	
+	@SuppressLint("NonConstantResourceId")
 	@Override
 	public void onClick(View v)
 	{
@@ -163,7 +173,7 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 			case CREW_MEMBER_TV_ID_RES:
 				FragmentCrewMember fragmentCrewMember = new FragmentCrewMember();
 				fragmentCrewMember.setCrewMember((CrewMember) v.getTag());
-				FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+				FragmentManager fragmentManager = mainActivity.getSupportFragmentManager();
 				Fragment fragmentFilm = fragmentManager.findFragmentByTag("FragmentFilm");
 				fragmentManager.beginTransaction()
 						.hide(fragmentFilm)
@@ -173,4 +183,12 @@ public class FragmentFilm extends Fragment implements View.OnClickListener
 				break;
 		}
 	}
+	
+	@Override
+	public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY)
+	{
+		//Hide the status and navigation bars
+		v.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE);
+	}
+	
 }

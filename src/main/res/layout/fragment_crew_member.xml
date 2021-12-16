@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:id="@+id/svCrewMember">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +19,8 @@
             android:layout_marginBottom="5dp"
             android:text="name"
             android:textAlignment="center"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:textColor="@color/text"/>
 
         <ImageView
             android:id="@+id/ivPhoto"
@@ -25,7 +28,7 @@
             android:layout_height="477dp"
             android:layout_gravity="center_horizontal"
             android:contentDescription="@string/photo"
-            android:src="@color/teal_700" />
+            android:src="@color/text_accent" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -39,7 +42,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gender"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/text"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvGender"
@@ -47,7 +52,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="gender"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/text" />
 
         </LinearLayout>
 
@@ -65,7 +71,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/born"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/text"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvBirthDate"
@@ -73,7 +81,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="birthDate"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/text" />
 
         </LinearLayout>
 
@@ -91,7 +100,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/died"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/text"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvDeathDate"
@@ -99,7 +110,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="deathDate"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:textColor="@color/text" />
 
         </LinearLayout>
 
@@ -110,7 +122,9 @@
             android:layout_marginEnd="25dp"
             android:layout_marginTop="5dp"
             android:text="@string/bio"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="@color/text"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvBio"
@@ -121,6 +135,7 @@
             android:layout_marginTop="5dp"
             android:text="bio"
             android:textSize="20sp"
+            android:textColor="@color/text"
             android:maxLines="5" />
 
         <TextView
@@ -132,16 +147,20 @@
             android:text=". . ."
             android:textAlignment="center"
             android:textSize="20sp"
+            android:textColor="@color/text"
             android:maxLines="5" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
             android:layout_marginTop="5dp"
             android:text="@string/films"
-            android:textSize="20sp" />
+            android:textSize="25sp"
+            android:textColor="@color/text"
+            android:textStyle="bold"/>
 
         <LinearLayout
             android:id="@+id/llCrewMemberFilmList"

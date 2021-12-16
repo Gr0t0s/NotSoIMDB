@@ -1,5 +1,6 @@
 package com.pestov.notsoimdb.controller;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +9,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -23,13 +26,15 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class FragmentCrewMember extends Fragment implements View.OnClickListener
+@RequiresApi(api = Build.VERSION_CODES.M)
+public class FragmentCrewMember extends Fragment implements View.OnClickListener, View.OnScrollChangeListener
 {
 	
 	private CrewMember crewMember;
 	private final SimpleDateFormat sdf = new SimpleDateFormat("MMMM d, yyyy", Locale.US);
 	private boolean tvBioExpanded = false;
 	
+	private ScrollView svCrewMember;
 	private TextView tvName;
 	private ImageView ivPhoto;
 	private TextView tvGender;
@@ -53,6 +58,9 @@ public class FragmentCrewMember extends Fragment implements View.OnClickListener
 	{
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.fragment_crew_member, container, false);
+		//Hide the status and navigation bars
+		view.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE);
+		svCrewMember = view.findViewById(R.id.svCrewMember);
 		tvName = view.findViewById(R.id.tvName);
 		ivPhoto = view.findViewById(R.id.ivPhoto);
 		tvGender = view.findViewById(R.id.tvGender);
@@ -65,6 +73,7 @@ public class FragmentCrewMember extends Fragment implements View.OnClickListener
 		pbFilmLoading = view.findViewById(R.id.pbFilmLoading);
 		llCrewMemberFilmList = view.findViewById(R.id.llCrewMemberFilmList);
 		
+		svCrewMember.setOnScrollChangeListener(this);
 		tvName.setText(crewMember.getName());
 		ivPhoto.setImageDrawable(crewMember.getPhoto());
 		tvGender.setText(crewMember.getGender().toString());
@@ -138,4 +147,10 @@ public class FragmentCrewMember extends Fragment implements View.OnClickListener
 		}
 	}
 	
+	@Override
+	public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY)
+	{
+		//Hide the status and navigation bars
+		v.setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_HIDE_NAVIGATION|View.SYSTEM_UI_FLAG_IMMERSIVE);
+	}
 }

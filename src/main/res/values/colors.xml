@@ -8,4 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#838383</color>
+    <color name="background">#272727</color>
+    <color name="background_titlebar">#151515</color>
+    <color name="text_accent">#2B4EFF</color>
+    <color name="text">#CFCFCF</color>
 </resources>

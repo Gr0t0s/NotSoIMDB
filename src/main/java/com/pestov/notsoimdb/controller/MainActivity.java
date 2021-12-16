@@ -1,5 +1,6 @@
 package com.pestov.notsoimdb.controller;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -29,6 +30,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -37,8 +39,9 @@ public class MainActivity extends AppCompatActivity
 	FragmentMain fragmentMain;
 	private final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy", Locale.US);
 	private final String DB_LOG_TAG = "SQLiteDB";
-	private final int DB_VERSION = 6;
+	private final int DB_VERSION = 7;
 	
+	@RequiresApi(api = Build.VERSION_CODES.M)
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
@@ -48,7 +51,6 @@ public class MainActivity extends AppCompatActivity
 		getSupportFragmentManager().beginTransaction()
 				.replace(R.id.frameMain, fragmentMain, "FragmentMain")
 				.commit();
-		new GetFilmsTask(fragmentMain).execute();
 	}
 	
 	public void getFilmsByCrewMember(FragmentCrewMember fragmentCrewMember)
@@ -59,6 +61,11 @@ public class MainActivity extends AppCompatActivity
 	public void getFilmsByTitle(FragmentMain fragmentMain)
 	{
 		new GetFilmsByTitleTask(fragmentMain).execute();
+	}
+	
+	public void getFilms(FragmentMain fragmentMain)
+	{
+		new GetFilmsTask(fragmentMain).execute();
 	}
 	
 	private class SQLiteConnector extends SQLiteOpenHelper
@@ -74,10 +81,10 @@ public class MainActivity extends AppCompatActivity
 		{
 			try
 			{
-				db.execSQL("create table Genders (_id integer primary key autoincrement, gender varchar(16) not null);");
-				db.execSQL("create table Genres (_id integer primary key autoincrement, genre varchar(16) not null);");
-				db.execSQL("create table CrewMembers (_id integer primary key autoincrement, name varchar(128) not null, photoFileName varchar(64), genderId integer not null, birthDate integer, deathDate integer, bio text not null, foreign key (genderId) references Genders(_id));");
-				db.execSQL("create table Films (_id integer primary key autoincrement, title varchar(128) not null, posterFileName varchar(64) not null, releaseDate integer not null, budget integer, gross integer, description text not null, runtime integer not null);");
+				db.execSQL("create table Genders (_id integer primary key autoincrement, gender text not null);");
+				db.execSQL("create table Genres (_id integer primary key autoincrement, genre text not null);");
+				db.execSQL("create table CrewMembers (_id integer primary key autoincrement, name text not null, photoFileName text, genderId integer not null, birthDate integer, deathDate integer, bio text not null, foreign key (genderId) references Genders(_id));");
+				db.execSQL("create table Films (_id integer primary key autoincrement, title text not null, posterFileName text not null, releaseDate integer not null, budget integer, gross integer, description text not null, runtime integer not null);");
 				db.execSQL("create table GenreLists (filmId integer, genreId integer, primary key (filmId, genreId), foreign key (filmId) references Films(_id), foreign key (genreId) references Genres(_id));");
 				db.execSQL("create table DirectorLists (filmId integer, crewMemberId integer, primary key (filmId, crewMemberId), foreign key (filmId) references Films(_id), foreign key (crewMemberId) references CrewMembers(_id));");
 				db.execSQL("create table ActorLists (filmId integer, crewMemberId integer, primary key (filmId, crewMemberId), foreign key (filmId) references Films(_id), foreign key (crewMemberId) references CrewMembers(_id));");
@@ -131,7 +138,7 @@ public class MainActivity extends AppCompatActivity
 									break;
 								case "birthDate":
 								case "deathDate":
-									aContentValues.put(tagname, sdf.parse(xpp.nextText()).getTime());
+									aContentValues.put(tagname, Objects.requireNonNull(sdf.parse(xpp.nextText())).getTime());
 									break;
 								default:
 									aContentValues.put(tagname, xpp.nextText());
@@ -168,7 +175,7 @@ public class MainActivity extends AppCompatActivity
 								case "Film":
 									break;
 								case "releaseDate":
-									aContentValues.put(tagname, sdf.parse(xpp.nextText()).getTime());
+									aContentValues.put(tagname, Objects.requireNonNull(sdf.parse(xpp.nextText())).getTime());
 									break;
 								case "budget":
 								case "gross":
@@ -272,10 +279,11 @@ public class MainActivity extends AppCompatActivity
 		}
 	}
 	
+	@SuppressLint("StaticFieldLeak")
 	public class GetFilmsTask extends AsyncTask<Void, Void, Void>
 	{
 		
-		private FragmentMain fragmentMain;
+		private final FragmentMain fragmentMain;
 		private ArrayList<Film> films;
 		
 		public GetFilmsTask(FragmentMain fragmentMain)
@@ -291,6 +299,7 @@ public class MainActivity extends AppCompatActivity
 			return null;
 		}
 		
+		@RequiresApi(api = Build.VERSION_CODES.M)
 		@Override
 		protected void onPostExecute(Void unused)
 		{
@@ -300,10 +309,11 @@ public class MainActivity extends AppCompatActivity
 		
 	}
 	
+	@SuppressLint("StaticFieldLeak")
 	public class GetFilmsByCrewMemberTask extends AsyncTask<Void, Void, Void>
 	{
 		
-		private FragmentCrewMember fragmentCrewMember;
+		private final FragmentCrewMember fragmentCrewMember;
 		private ArrayList<Film> films;
 		
 		public GetFilmsByCrewMemberTask(FragmentCrewMember fragmentCrewMember)
@@ -320,6 +330,7 @@ public class MainActivity extends AppCompatActivity
 			return null;
 		}
 		
+		@RequiresApi(api = Build.VERSION_CODES.M)
 		@Override
 		protected void onPostExecute(Void unused)
 		{
@@ -329,10 +340,11 @@ public class MainActivity extends AppCompatActivity
 		
 	}
 	
+	@SuppressLint("StaticFieldLeak")
 	public class GetFilmsByTitleTask extends AsyncTask<Void, Void, Void>
 	{
 		
-		private FragmentMain fragmentMain;
+		private final FragmentMain fragmentMain;
 		private ArrayList<Film> films;
 		
 		public GetFilmsByTitleTask(FragmentMain fragmentMain)
@@ -348,6 +360,7 @@ public class MainActivity extends AppCompatActivity
 			return null;
 		}
 		
+		@RequiresApi(api = Build.VERSION_CODES.M)
 		@Override
 		protected void onPostExecute(Void unused)
 		{
@@ -360,7 +373,7 @@ public class MainActivity extends AppCompatActivity
 	@RequiresApi(api = Build.VERSION_CODES.O)
 	public ArrayList<Film> queryFilms(String query, String[] args)
 	{
-		SQLiteConnector connector = new SQLiteConnector(MainActivity.this, "NotSoIMDb", DB_VERSION); //контекст поточного Актівіті, назва бази, версія
+		SQLiteConnector connector = new SQLiteConnector(MainActivity.this, "NotSoIMDb", DB_VERSION);
 		Cursor result, result1;
 		ArrayList<Film> films = new ArrayList<>();
 		try
@@ -373,7 +386,6 @@ public class MainActivity extends AppCompatActivity
 			result = db.rawQuery(query, args);
 			while (result.moveToNext())
 			{
-				//Спочатку беремо індекси полів
 				int idIndex = result.getColumnIndexOrThrow("_id");
 				int titleIndex = result.getColumnIndexOrThrow("title");
 				int posterFileNameIndex = result.getColumnIndexOrThrow("posterFileName");
@@ -382,7 +394,6 @@ public class MainActivity extends AppCompatActivity
 				int grossIndex = result.getColumnIndexOrThrow("gross");
 				int descriptionIndex = result.getColumnIndexOrThrow("description");
 				int runtimeIndex = result.getColumnIndexOrThrow("runtime");
-				//Витягуємо дані з полів за індексом
 				//Getting the genres
 				result1 = db.rawQuery("select genre from Films join GenreLists on Films._id = GenreLists.filmId join Genres on GenreLists.genreId = Genres._id where Films._id = " + result.getLong(idIndex) + " order by genre;", null);
 				while (result1.moveToNext())
